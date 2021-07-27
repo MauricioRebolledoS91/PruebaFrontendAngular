@@ -1,0 +1,15 @@
+<app-generic-list [listado]="peliculas">
+  
+    <ng-container contenido>
+      <div class="peliculas-contenedor">
+        <div *ngFor="let pelicula of peliculas; let index = index" class="pelicula-contenedor">
+          <a [routerLink]="'/movie/' + pelicula.id">
+            <img [src]="pelicula.poster_Path" alt="poster"/>
+          </a>
+          <p>
+            <a [routerLink]="'/movie/' + pelicula.id">{{pelicula.title}}</a>
+          </p>
+        </div>
+      </div>
+    </ng-container>
+</app-generic-list>

@@ -1,0 +1,23 @@
+<div *ngIf="pelicula" style="display: flex;">
+    <div>
+        <h2 class="titulo">{{pelicula.title}}</h2>
+
+        <div class="contenedor">
+            <img [src]="pelicula.poster_Path" alt="poster" style="width:30%" />
+        </div>
+
+        <div style="margin-top:1rem">
+            <h3>Resumen</h3>
+            <div>
+                <p>{{pelicula.overview}}</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="spinner-contenedor">
+    <mat-spinner *ngIf="!pelicula"></mat-spinner>
+</div>
+

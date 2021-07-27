@@ -1,0 +1,24 @@
+<h1>Buscar Películas</h1>
+
+<mat-spinner *ngIf="!peliculas"></mat-spinner>
+
+<form [formGroup]="form" *ngIf="peliculas">
+    <mat-form-field appearance="outline">
+        <mat-label>Título</mat-label>
+        <input formControlName="title" matInput />
+    </mat-form-field>
+
+    <div>
+        <mat-checkbox formControlName="betterRated">Mejor Calificadas</mat-checkbox>
+    </div>
+    <div>
+        <mat-checkbox formControlName="morePopulars">Más Populares</mat-checkbox>
+    </div>
+    <div class="contenedor-limpiar">
+        <button mat-flat-button (click)="limpiar()" color="warn">Limpiar</button>
+    </div>
+
+</form>
+
+<app-movies-list [peliculas]="peliculas"></app-movies-list>
+
